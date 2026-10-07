@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteSpace Realty | Spaces That Match Your Ambition</title>
+    <meta name="description" content="Discover ultra-luxury residential and commercial properties with EliteSpace Realty. Spaces tailored to match your ambition.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        lavender: {
+                            DEFAULT: '#9b8ec4',
+                            50: '#f7f6fb',
+                            100: '#efeef7',
+                            200: '#dfdbe1',
+                            300: '#c7bfda',
+                            400: '#9b8ec4',
+                            500: '#8473b3',
+                            600: '#6f5ca0',
+                        },
+                        softpurple: {
+                            DEFAULT: '#7c6daa',
+                            dark: '#5a4b87',
+                            light: '#a397c8'
+                        },
+                        glassbg: {
+                            light: 'rgba(255, 255, 255, 0.65)',
+                            dark: 'rgba(23, 20, 36, 0.75)',
+                            cardLight: 'rgba(255, 255, 255, 0.55)',
+                            cardDark: 'rgba(32, 28, 51, 0.65)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    backdropBlur: {
+                        glass: '16px',
+                        'glass-heavy': '24px'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Glasspunk Design Token Variables */
+        :root {
+            --bg-gradient: linear-gradient(135deg, #F5F3FF 0%, #EBE6FF 50%, #F3F0FF 100%);
+            --glass-border: rgba(155, 142, 196, 0.25);
+            --glass-shadow: 0 8px 32px 0 rgba(124, 109, 170, 0.12);
+            --glass-glow: 0 0 20px rgba(155, 142, 196, 0.3);
+            --text-main: #2A2438;
+            --text-muted: #6B657B;
+        }
+
+        .dark {
+            --bg-gradient: linear-gradient(135deg, #0F0D15 0%, #171424 50%, #1A162B 100%);
+            --glass-border: rgba(155, 142, 196, 0.18);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            --glass-glow: 0 0 25px rgba(155, 142, 196, 0.2);
+            --text-main: #F5F3FF;
+            --text-muted: #A39DB5;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: background 0.4s ease, color 0.4s ease;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism utility classes */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .dark .glass-panel {
+            background: rgba(23, 20, 36, 0.75);
+            border: 1px solid rgba(155, 142, 196, 0.15);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .dark .glass-card {
+            background: rgba(32, 28, 51, 0.6);
+            border: 1px solid rgba(155, 142, 196, 0.12);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(155, 142, 196, 0.5);
+            box-shadow: var(--glass-glow), var(--glass-shadow);
+        }
+
+        .glass-input {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(155, 142, 196, 0.3);
+            color: var(--text-main);
+        }
+
+        .dark .glass-input {
+            background: rgba(15, 13, 21, 0.6);
+            border: 1px solid rgba(155, 142, 196, 0.2);
+            color: var(--text-main);
+        }
+
+        .glass-input:focus {
+            border-color: #7c6daa;
+            box-shadow: 0 0 0 3px rgba(124, 109, 170, 0.25);
+            outline: none;
+        }
+
+        /* Animated Glowing elements */
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(155, 142, 196, 0.4);
+        }
+
+        .neon-text {
+            text-shadow: 0 0 10px rgba(155, 142, 196, 0.5);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(124, 109, 170, 0.4);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(124, 109, 170, 0.7);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease forward;
+        }
+
+        .page-section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .page-section.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Toast Popup */
+        #toast-container {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9999;
+        }
+
+        /* Canvas background overlay */
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-lavender-400 selection:text-white">
+
+    <div id="preloader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0F0D15] text-white transition-opacity duration-700">
+        <div class="relative flex items-center justify-center mb-4">
+            <div class="w-20 h-20 rounded-full border-4 border-lavender-300/20 border-t-lavender-400 animate-spin"></div>
+            <i data-lucide="building-2" class="w-8 h-8 absolute text-lavender-400"></i>
+        </div>
+        <h2 class="text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-lavender-300 to-softpurple">ELITESPACE</h2>
+        <p class="text-xs tracking-wider text-slate-400 mt-1 uppercase">Spaces That Match Your Ambition</p>
+    </div>
+
+    <div class="min-h-screen flex flex-col lg:flex-row relative">
+
+        <!-- LEFT SIDEBAR NAVIGATION -->
+        <aside id="sidebar" class="fixed lg:sticky top-0 left-0 z-40 w-72 h-screen glass-panel flex flex-col justify-between transition-transform duration-300 -translate-x-full lg:translate-x-0 border-r border-lavender-400/20">
+            <div>
+                <!-- Brand Header -->
+                <div class="p-6 flex items-center justify-between border-b border-lavender-400/10">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-softpurple to-lavender-400 flex items-center justify-center text-white shadow-lg shadow-lavender-400/30">
+                            <i data-lucide="building-2" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h1 class="font-extrabold text-lg tracking-tight leading-none text-slate-900 dark:text-white">EliteSpace</h1>
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-softpurple dark:text-lavender-300">REALTY GROUP</span>
+                        </div>
+                    </div>
+                    <button id="close-sidebar-btn" class="lg:hidden text-slate-500 hover:text-slate-800 dark:hover:text-white">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="p-4 space-y-1.5" id="main-nav">
+                    <a href="#home" data-target="home" class="nav-link active flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-200 bg-softpurple text-white shadow-md shadow-softpurple/30">
+                        <i data-lucide="home" class="w-5 h-5"></i>
+                        <span>Home & Overview</span>
+                    </a>
+                    <a href="#properties" data-target="properties" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-sm text-slate-600 dark:text-slate-300 hover:bg-lavender-100/50 dark:hover:bg-slate-800/50 transition-all duration-200">
+                        <i data-lucide="layout-grid" class="w-5 h-5"></i>
+                        <span>Properties & Gallery</span>
+                    </a>
+                    <a href="#agents" data-target="agents" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-sm text-slate-600 dark:text-slate-300 hover:bg-lavender-100/50 dark:hover:bg-slate-800/50 transition-all duration-200">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                        <span>Elite Agents & Team</span>
+                    </a>
+                    <a href="#consult" data-target="consult" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-sm text-slate-600 dark:text-slate-300 hover:bg-lavender-100/50 dark:hover:bg-slate-800/50 transition-all duration-200">
+                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                        <span>Consult & Pricing</span>
+                    </a>
+                    <a href="#account" data-target="account" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-sm text-slate-600 dark:text-slate-300 hover:bg-lavender-100/50 dark:hover:bg-slate-800/50 transition-all duration-200">
+                        <i data-lucide="bookmark" class="w-5 h-5"></i>
+                        <span>Saved & Portal</span>
+                        <span id="saved-counter-badge" class="ml-auto bg-lavender-400 text-white text-xs px-2 py-0.5 rounded-full font-bold">0</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Sidebar Bottom / Theme Switcher & User Profile -->
+            <div class="p-4 border-t border-lavender-400/10 space-y-3">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl glass-card text-xs font-semibold text-slate-700 dark:text-slate-200">
+                    <span class="flex items-center gap-2">
+                        <i data-lucide="moon" class="w-4 h-4 text-softpurple dark:text-lavender-300"></i>
+                        <span id="theme-text-label">Dark Mode</span>
+                    </span>
+                    <div class="w-8 h-4 rounded-full bg-lavender-200 dark:bg-softpurple relative transition-colors duration-300">
+                        <div id="theme-dot" class="w-3 h-3 rounded-full bg-white absolute top-0.5 left-0.5 transition-transform duration-300"></div>
+                    </div>
+                </button>
+
+                <!-- Quick Agent Contact Card -->
+                <div class="p-3 rounded-xl bg-gradient-to-br from-lavender-500/10 to-softpurple/20 border border-lavender-400/20 flex items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Direct Advisory" class="w-10 h-10 rounded-full object-cover border-2 border-softpurple">
+                    <div class="overflow-hidden">
+                        <p class="text-xs font-bold text-slate-800 dark:text-white truncate">Elena Rostova</p>
+                        <p class="text-[10px] text-slate-500 dark:text-slate-400">Head of Advisory</p>
+                    </div>
+                    <a href="tel:+18005550199" class="ml-auto p-2 bg-softpurple text-white rounded-lg hover:bg-softpurple-dark transition-colors">
+                        <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1 min-w-0 flex flex-col relative overflow-x-hidden">
+
+            <!-- Mobile Top Navigation Header -->
+            <header class="lg:hidden sticky top-0 z-30 glass-panel px-4 py-3 flex items-center justify-between border-b border-lavender-400/20">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-softpurple flex items-center justify-center text-white">
+                        <i data-lucide="building-2" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-extrabold text-base tracking-tight text-slate-800 dark:text-white">EliteSpace</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="mobile-saved-btn" onclick="navigateToSection('account')" class="p-2 text-slate-700 dark:text-slate-200 relative">
+                        <i data-lucide="heart" class="w-5 h-5"></i>
+                        <span id="mobile-saved-badge" class="absolute -top-1 -right-1 bg-softpurple text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                    </button>
+                    <button id="open-sidebar-btn" class="p-2 text-slate-700 dark:text-slate-200">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- SECTION 1: HOME PAGE -->
+            <section id="home" class="page-section active flex-1">
+                <!-- Hero Banner Section with Video & Parallax Overlay -->
+                <div class="relative min-h-[85vh] flex items-center justify-center p-6 md:p-12 overflow-hidden rounded-b-3xl">
+                    <!-- Background Canvas / Animated Overlay -->
+                    <canvas id="hero-canvas"></canvas>
+
+                    <!-- Background Image Overlay fallback / styling -->
+                    <div class="absolute inset-0 z-0 bg-cover bg-center opacity-30 dark:opacity-25" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-lavender-50/90 via-transparent to-lavender-100/40 dark:from-[#0F0D15] dark:via-transparent dark:to-[#0F0D15]/80"></div>
+
+                    <!-- Hero Content Glass Box -->
+                    <div class="relative z-10 max-w-4xl mx-auto text-center glass-panel p-8 md:p-12 rounded-3xl border border-white/40 dark:border-lavender-400/20 shadow-2xl animate-fade-in">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-softpurple/10 dark:bg-softpurple/30 border border-softpurple/30 mb-6">
+                            <span class="w-2 h-2 rounded-full bg-softpurple animate-ping"></span>
+                            <span class="text-xs font-semibold text-softpurple dark:text-lavender-300 uppercase tracking-widest">Ultra Luxury Real Estate</span>
+                        </div>
+                        <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-4 text-slate-900 dark:text-white">
+                            Spaces That Match Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-softpurple to-lavender-400">Ambition.</span>
+                        </h1>
+                        <p class="text-base md:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
+                            Discover curated architectural masterpieces, high-yield commercial assets, and bespoke private estates engineered for visionary achievers.
+                        </p>
+
+                        <!-- Hero Search Bar -->
+                        <div class="glass-panel p-3 rounded-2xl max-w-3xl mx-auto flex flex-col md:flex-row gap-3 shadow-lg">
+                            <div class="flex-1 flex items-center gap-2 px-3 border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-700/50 py-2">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-softpurple"></i>
+                                <input type="text" id="hero-location-input" placeholder="Location (e.g. Beverly Hills, New York)" class="w-full bg-transparent border-none text-sm text-slate-800 dark:text-white focus:outline-none placeholder-slate-400">
+                            </div>
+                            <div class="flex-1 flex items-center gap-2 px-3 py-2">
+                                <i data-lucide="home" class="w-5 h-5 text-softpurple"></i>
+                                <select id="hero-type-input" class="w-full bg-transparent border-none text-sm text-slate-800 dark:text-white focus:outline-none cursor-pointer">
+                                    <option value="" class="dark:bg-slate-900">All Property Types</option>
+                                    <option value="Villa" class="dark:bg-slate-900">Luxury Villa</option>
+                                    <option value="Penthouse" class="dark:bg-slate-900">Penthouse</option>
+                                    <option value="Commercial" class="dark:bg-slate-900">Commercial Tower</option>
+                                    <option value="Estate" class="dark:bg-slate-900">Private Estate</option>
+                                </select>
+                            </div>
+                            <button onclick="handleHeroSearch()" class="px-8 py-3 rounded-xl bg-gradient-to-r from-softpurple to-lavender-500 hover:from-softpurple-dark hover:to-lavender-600 text-white font-semibold text-sm shadow-lg shadow-softpurple/30 transition-all flex items-center justify-center gap-2">
+                                <i data-lucide="search" class="w-4 h-4"></i>
+                                <span>Explore Now</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 md:p-12 max-w-7xl mx-auto -mt-10 relative z-20">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                        <div class="glass-card p-6 rounded-2xl text-center">
+                            <h3 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-softpurple to-lavender-400 mb-1" data-counter="1.8">0</h3>
+                            <p class="text-xs md:text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Portfolio ($ Billion)</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl text-center">
+                            <h3 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-softpurple to-lavender-400 mb-1" data-counter="920">0</h3>
+                            <p class="text-xs md:text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Prime Units Sold</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl text-center">
+                            <h3 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-softpurple to-lavender-400 mb-1" data-counter="99.4">0</h3>
+                            <p class="text-xs md:text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Satisfaction Rate (%)</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl text-center">
+                            <h3 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-softpurple to-lavender-400 mb-1" data-counter="45">0</h3>
+                            <p class="text-xs md:text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Global Locations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 md:p-12 max-w-7xl mx-auto">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-softpurple">Curated Collection</span>
+                            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Featured Elite Spaces</h2>
+                        </div>
+                        <button onclick="navigateToSection('properties')" class="inline-flex items-center gap-2 text-sm font-bold text-softpurple hover:text-softpurple-dark dark:text-lavender-300">
+                            <span>View All Properties</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Dynamic Container for Featured Properties -->
+                    <div id="featured-properties-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="p-6 md:p-12 max-w-7xl mx-auto">
+                    <div class="glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden">
+                        <div class="max-w-xl">
+                            <span class="text-xs font-bold uppercase tracking-widest text-softpurple">Smart Investment Tools</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mt-1 mb-3">Mortgage & Investment Estimator</h2>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-6">Calculate estimated monthly payments and financial commitments for your dream property.</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                            <div class="lg:col-span-7 space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-sm font-semibold mb-2">
+                                        <label class="text-slate-700 dark:text-slate-300">Property Price ($)</label>
+                                        <span id="calc-price-val" class="text-softpurple font-bold">$2,500,000</span>
+                                    </div>
+                                    <input type="range" id="calc-price" min="500000" max="15000000" step="100000" value="2500000" class="w-full accent-softpurple cursor-pointer">
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Down Payment (%)</label>
+                                        <input type="number" id="calc-down" value="20" min="5" max="80" class="w-full glass-input p-3 rounded-xl text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Interest Rate (%)</label>
+                                        <input type="number" id="calc-rate" value="5.8" step="0.1" class="w-full glass-input p-3 rounded-xl text-sm">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Loan Tenure (Years)</label>
+                                    <select id="calc-tenure" class="w-full glass-input p-3 rounded-xl text-sm">
+                                        <option value="15">15 Years</option>
+                                        <option value="20">20 Years</option>
+                                        <option value="30" selected>30 Years</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="lg:col-span-5">
+                                <div class="glass-card p-6 rounded-2xl border border-softpurple/30 text-center space-y-4 bg-gradient-to-b from-lavender-100/40 to-transparent dark:from-slate-800/40">
+                                    <span class="text-xs uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Estimated Monthly Payment</span>
+                                    <div id="calc-result" class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-softpurple to-lavender-500">
+                                        $11,733 / mo
+                                    </div>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Includes estimated principal and interest based on inputs.</p>
+                                    <button onclick="navigateToSection('consult')" class="w-full py-3 bg-softpurple text-white text-sm font-semibold rounded-xl hover:bg-softpurple-dark transition-colors shadow-md">
+                                        Get Pre-Approved Advisory
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="properties" class="page-section p-6 md:p-12 max-w-7xl mx-auto space-y-8">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-softpurple">Explore Portfolio</span>
+                    <h1 class="text-3xl font-black text-slate-900 dark:text-white mt-1">Property Directory & Gallery</h1>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Filter through our active catalog of high-end estates and modern architecture.</p>
+                </div>
+
+                <!-- Comprehensive Filter Bar -->
+                <div class="glass-panel p-6 rounded-2xl space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Search Keywords</label>
+                            <input type="text" id="filter-keyword" placeholder="Title, location..." class="w-full glass-input p-2.5 rounded-xl text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Property Type</label>
+                            <select id="filter-type" class="w-full glass-input p-2.5 rounded-xl text-sm">
+                                <option value="all">All Types</option>
+                                <option value="Villa">Villa</option>
+                                <option value="Penthouse">Penthouse</option>
+                                <option value="Commercial">Commercial</option>
+                                <option value="Estate">Private Estate</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Max Price Limit</label>
+                            <select id="filter-price" class="w-full glass-input p-2.5 rounded-xl text-sm">
+                                <option value="all">Any Price</option>
+                                <option value="3000000">Up to $3,000,000</option>
+                                <option value="6000000">Up to $6,000,000</option>
+                                <option value="12000000">Up to $12,000,000</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Minimum Bedrooms</label>
+                            <select id="filter-beds" class="w-full glass-input p-2.5 rounded-xl text-sm">
+                                <option value="all">Any Bedrooms</option>
+                                <option value="2">2+ Bedrooms</option>
+                                <option value="4">4+ Bedrooms</option>
+                                <option value="6">6+ Bedrooms</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center pt-2 border-t border-slate-200/50 dark:border-slate-700/50">
+                        <span id="results-count" class="text-xs font-semibold text-slate-500">Showing 6 Properties</span>
+                        <button onclick="resetFilters()" class="text-xs text-softpurple font-semibold hover:underline flex items-center gap-1">
+                            <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                            Reset Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Properties Grid -->
+                <div id="full-properties-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Dynamic Loading -->
+                </div>
+            </section>
+
+            <section id="agents" class="page-section p-6 md:p-12 max-w-7xl mx-auto space-y-10">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-softpurple">Expert Representation</span>
+                    <h1 class="text-3xl font-black text-slate-900 dark:text-white mt-1">Our Senior Advisors</h1>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Industry veterans committed to confidentiality and market mastery.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="agents-grid">
+                    <!-- Populated by JS -->
+                </div>
+
+                <!-- Testimonials Carousel Section -->
+                <div class="pt-8 border-t border-slate-200 dark:border-slate-800">
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">What Our Clients Say</h2>
+                    <div class="glass-panel p-8 rounded-3xl max-w-3xl mx-auto relative min-h-[220px] flex flex-col justify-between" id="testimonial-box">
+                        <div class="flex items-center gap-1 text-amber-400 mb-3" id="testimonial-stars">
+                            <!-- Stars -->
+                        </div>
+                        <p id="testimonial-text" class="text-base italic text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
+                            "EliteSpace Realty represented us during the acquisition of our Malibu estate. Exceptional confidentiality, speed, and market intelligence throughout."
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <img id="testimonial-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" class="w-10 h-10 rounded-full object-cover">
+                                <div>
+                                    <p id="testimonial-author" class="text-sm font-bold text-slate-800 dark:text-white">Victoria Sterling</p>
+                                    <p id="testimonial-role" class="text-xs text-slate-500 dark:text-slate-400">Founder, Sterling Capital</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="prevTestimonial()" class="p-2 rounded-xl glass-card hover:bg-softpurple hover:text-white transition-colors">
+                                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                                </button>
+                                <button onclick="nextTestimonial()" class="p-2 rounded-xl glass-card hover:bg-softpurple hover:text-white transition-colors">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="consult" class="page-section p-6 md:p-12 max-w-7xl mx-auto space-y-12">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-softpurple">Bespoke Advisory</span>
+                    <h1 class="text-3xl font-black text-slate-900 dark:text-white mt-1">Book Consultation & Service Plans</h1>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <!-- Consultation Booking Form -->
+                    <div class="lg:col-span-7 glass-panel p-8 rounded-3xl">
+                        <h2 class="text-xl font-bold mb-4 text-slate-900 dark:text-white">Schedule Private Advisory Session</h2>
+                        <form id="consultation-form" onsubmit="handleConsultationSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Full Name *</label>
+                                    <input type="text" required placeholder="John Doe" class="w-full glass-input p-3 rounded-xl text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Email Address *</label>
+                                    <input type="email" required placeholder="john@example.com" class="w-full glass-input p-3 rounded-xl text-sm">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Preferred Date *</label>
+                                    <input type="date" required class="w-full glass-input p-3 rounded-xl text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Preferred Time *</label>
+                                    <select required class="w-full glass-input p-3 rounded-xl text-sm">
+                                        <option value="morning">Morning (09:00 AM - 12:00 PM)</option>
+                                        <option value="afternoon">Afternoon (01:00 PM - 05:00 PM)</option>
+                                        <option value="evening">Evening (06:00 PM - 08:00 PM)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Service Requirement</label>
+                                <select class="w-full glass-input p-3 rounded-xl text-sm">
+                                    <option>Property Acquisition</option>
+                                    <option>Seller Representation</option>
+                                    <option>Commercial Portfolio Advisory</option>
+                                    <option>Property Management</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Notes or Specific Requirements</label>
+                                <textarea rows="3" placeholder="Specify budget ranges or property specs..." class="w-full glass-input p-3 rounded-xl text-sm"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-softpurple to-lavender-500 text-white font-bold rounded-xl shadow-lg shadow-softpurple/30 hover:opacity-95 transition-opacity">
+                                Confirm Consultation Request
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Frequently Asked Questions</h2>
+                        <div class="space-y-3" id="faq-accordion">
+                            <div class="glass-card rounded-2xl overflow-hidden">
+                                <button onclick="toggleFaq(this)" class="w-full p-4 text-left font-semibold text-sm flex justify-between items-center text-slate-800 dark:text-slate-200">
+                                    <span>What sets EliteSpace Realty apart?</span>
+                                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+                                </button>
+                                <div class="px-4 pb-4 text-xs text-slate-600 dark:text-slate-400 hidden border-t border-slate-200/50 dark:border-slate-800 pt-2">
+                                    We exclusively represent luxury, high-value assets with private listing networks, complete discretion, and tailored wealth protection advisory.
+                                </div>
+                            </div>
+                            <div class="glass-card rounded-2xl overflow-hidden">
+                                <button onclick="toggleFaq(this)" class="w-full p-4 text-left font-semibold text-sm flex justify-between items-center text-slate-800 dark:text-slate-200">
+                                    <span>Do you assist international buyers?</span>
+                                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+                                </button>
+                                <div class="px-4 pb-4 text-xs text-slate-600 dark:text-slate-400 hidden border-t border-slate-200/50 dark:border-slate-800 pt-2">
+                                    Yes, over 40% of our transactions involve international clients. We assist with legal frameworks, currency exchange, and cross-border structuring.
+                                </div>
+                            </div>
+                            <div class="glass-card rounded-2xl overflow-hidden">
+                                <button onclick="toggleFaq(this)" class="w-full p-4 text-left font-semibold text-sm flex justify-between items-center text-slate-800 dark:text-slate-200">
+                                    <span>How do off-market listings work?</span>
+                                    <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+                                </button>
+                                <div class="px-4 pb-4 text-xs text-slate-600 dark:text-slate-400 hidden border-t border-slate-200/50 dark:border-slate-800 pt-2">
+                                    Off-market properties are confidential listings available only to registered VIP clients after identity verification.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Table -->
+                <div class="pt-8">
+                    <h2 class="text-2xl font-bold text-center text-slate-900 dark:text-white mb-8">Advisory & Representation Plans</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Standard -->
+                        <div class="glass-card p-6 rounded-3xl flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-bold uppercase text-slate-500">Buyer Direct</span>
+                                <h3 class="text-xl font-bold text-slate-800 dark:text-white mt-1">Acquisition Tier</h3>
+                                <p class="text-3xl font-extrabold text-softpurple my-4">Free <span class="text-xs text-slate-400 font-normal">/ for buyers</span></p>
+                                <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-2 mb-6">
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Access to public MLS</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Standard property tours</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Basic legal review</li>
+                                </ul>
+                            </div>
+                            <button onclick="navigateToSection('consult')" class="w-full py-2.5 glass-panel rounded-xl text-xs font-bold hover:bg-softpurple hover:text-white transition-colors">Select Plan</button>
+                        </div>
+                        <!-- VIP Premium -->
+                        <div class="glass-card p-6 rounded-3xl flex flex-col justify-between border-2 border-softpurple relative shadow-xl">
+                            <span class="absolute -top-3 right-6 bg-softpurple text-white text-[10px] uppercase font-extrabold px-3 py-1 rounded-full">Most Popular</span>
+                            <div>
+                                <span class="text-xs font-bold uppercase text-softpurple">VIP Concierge</span>
+                                <h3 class="text-xl font-bold text-slate-800 dark:text-white mt-1">Private Client</h3>
+                                <p class="text-3xl font-extrabold text-softpurple my-4">1.5% <span class="text-xs text-slate-400 font-normal">/ retain advisory</span></p>
+                                <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-2 mb-6">
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Off-market pocket listings</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Helicopter & Yacht viewings</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Dedicated Senior Partner</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Architectural appraisal</li>
+                                </ul>
+                            </div>
+                            <button onclick="navigateToSection('consult')" class="w-full py-2.5 bg-softpurple text-white rounded-xl text-xs font-bold hover:bg-softpurple-dark transition-colors">Get Started</button>
+                        </div>
+                        <!-- Corporate -->
+                        <div class="glass-card p-6 rounded-3xl flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-bold uppercase text-slate-500">Commercial</span>
+                                <h3 class="text-xl font-bold text-slate-800 dark:text-white mt-1">Institutional Tier</h3>
+                                <p class="text-3xl font-extrabold text-softpurple my-4">Custom <span class="text-xs text-slate-400 font-normal">/ portfolio size</span></p>
+                                <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-2 mb-6">
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Commercial asset underwriting</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Tenant lease management</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Direct fund syndication</li>
+                                </ul>
+                            </div>
+                            <button onclick="navigateToSection('consult')" class="w-full py-2.5 glass-panel rounded-xl text-xs font-bold hover:bg-softpurple hover:text-white transition-colors">Contact Corporate Desk</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="account" class="page-section p-6 md:p-12 max-w-7xl mx-auto space-y-8">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-softpurple">Client Portal</span>
+                    <h1 class="text-3xl font-black text-slate-900 dark:text-white mt-1">Saved Properties & Account</h1>
+                </div>
+
+                <!-- Tabs -->
+                <div class="flex border-b border-slate-200 dark:border-slate-800 gap-6">
+                    <button onclick="switchAccountTab('saved')" id="tab-saved-btn" class="pb-3 text-sm font-bold border-b-2 border-softpurple text-softpurple">
+                        Saved Properties (<span id="saved-tab-count">0</span>)
+                    </button>
+                    <button onclick="switchAccountTab('login')" id="tab-login-btn" class="pb-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-white">
+                        Client Sign In / Register
+                    </button>
+                </div>
+
+                <!-- Tab content: Saved Properties -->
+                <div id="account-saved-content" class="space-y-6">
+                    <div id="saved-properties-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Rendered by JS -->
+                    </div>
+                    <div id="saved-empty-state" class="text-center py-16 glass-panel rounded-3xl hidden">
+                        <i data-lucide="heart" class="w-12 h-12 text-slate-400 mx-auto mb-3"></i>
+                        <h3 class="text-lg font-bold text-slate-700 dark:text-slate-300">No Saved Properties Yet</h3>
+                        <p class="text-xs text-slate-500 mt-1 mb-4">Click the heart icon on any property to bookmark it here.</p>
+                        <button onclick="navigateToSection('properties')" class="px-6 py-2.5 bg-softpurple text-white text-xs font-bold rounded-xl">Browse Properties</button>
+                    </div>
+                </div>
+
+                <!-- Tab content: Login / Signup -->
+                <div id="account-login-content" class="hidden max-w-md mx-auto glass-panel p-8 rounded-3xl">
+                    <h2 class="text-xl font-bold mb-4 text-center text-slate-900 dark:text-white">Access VIP Portal</h2>
+                    <form onsubmit="handleLoginSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Email Address</label>
+                            <input type="email" required placeholder="vip@elitespace.com" class="w-full glass-input p-3 rounded-xl text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Password</label>
+                            <input type="password" required placeholder="••••••••" class="w-full glass-input p-3 rounded-xl text-sm">
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" class="rounded accent-softpurple">
+                                <span class="text-slate-600 dark:text-slate-400">Remember me</span>
+                            </label>
+                            <a href="#" class="text-softpurple hover:underline font-semibold">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-softpurple text-white text-sm font-bold rounded-xl shadow-md">
+                            Sign In to Portal
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <footer class="mt-auto border-t border-lavender-400/20 glass-panel py-6 px-6 md:px-12">
+                <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+                    <div>
+                        © 2026 EliteSpace Realty Group. All Rights Reserved. "Spaces That Match Your Ambition".
+                    </div>
+                    <div class="flex items-center gap-6">
+                        <a href="#home" class="hover:text-softpurple transition-colors">Privacy Policy</a>
+                        <a href="#home" class="hover:text-softpurple transition-colors">Terms of Service</a>
+                        <a href="#home" class="hover:text-softpurple transition-colors">Sitemap</a>
+                    </div>
+                    <div class="flex items-center gap-4 text-slate-600 dark:text-slate-300">
+                        <a href="#" class="hover:text-softpurple"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="#" class="hover:text-softpurple"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                        <a href="#" class="hover:text-softpurple"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-3 items-end">
+        <!-- Back to Top Button -->
+        <button id="back-to-top" onclick="scrollToTop()" class="p-3 glass-panel rounded-full shadow-xl hover:bg-softpurple hover:text-white transition-all opacity-0 pointer-events-none text-slate-700 dark:text-white">
+            <i data-lucide="arrow-up" class="w-5 h-5"></i>
+        </button>
+
+        <!-- Sticky Floating CTA -->
+        <button onclick="navigateToSection('consult')" class="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-softpurple to-lavender-500 text-white font-bold text-xs rounded-full shadow-2xl hover:scale-105 transition-transform border border-white/20">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>Schedule Advisory</span>
+        </button>
+    </div>
+
+    <div id="property-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md hidden transition-opacity">
+        <div class="glass-panel w-full max-w-4xl max-h-[90vh] rounded-3xl overflow-y-auto border border-white/30 dark:border-slate-700 flex flex-col relative shadow-2xl">
+            <!-- Modal Close Header -->
+            <button onclick="closePropertyModal()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/70">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Modal Content (Injected by JS) -->
+            <div id="modal-content" class="p-6 md:p-8 space-y-6">
+                <!-- Content injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container"></div>
+
+    <script>
+        /* Mock Database of Properties */
+        const propertiesData = [
+            {
+                id: 1,
+                title: "The Glass Horizon Villa",
+                type: "Villa",
+                price: 8500000,
+                location: "Beverly Hills, CA",
+                beds: 5,
+                baths: 6,
+                sqft: 7200,
+                featured: true,
+                image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80",
+                gallery: [
+                    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1000&q=80"
+                ],
+                agent: {
+                    name: "Elena Rostova",
+                    role: "Senior Partner",
+                    phone: "+1 310 555 0199",
+                    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80"
+                },
+                description: "Seamless floor-to-ceiling glass paneling overlooking city lights. Complete with infinity pool, smart automation, and underground 4-car showroom gallery.",
+                amenities: ["Infinity Pool", "Smart Home Automation", "Private Cinema", "Wine Cellar", "Helipad Access"]
+            },
+            {
+                id: 2,
+                title: "Skyline Apex Penthouse",
+                type: "Penthouse",
+                price: 12400000,
+                location: "Tribeca, New York",
+                beds: 4,
+                baths: 4.5,
+                sqft: 5800,
+                featured: true,
+                image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80",
+                gallery: [
+                    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1000&q=80"
+                ],
+                agent: {
+                    name: "Marcus Sterling",
+                    role: "Commercial Director",
+                    phone: "+1 212 555 0144",
+                    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=120&q=80"
+                },
+                description: "360-degree views of Manhattan sky. Private terrace wrap-around, custom Italian oak millwork, and private express elevator access.",
+                amenities: ["360 Skyline View", "Private Elevator", "Concierge 24/7", "Spa & Sauna", "Chef Kitchen"]
+            },
+            {
+                id: 3,
+                title: "Azure Coast Waterfront Estate",
+                type: "Estate",
+                price: 15200000,
+                location: "Miami Beach, FL",
+                beds: 7,
+                baths: 8,
+                sqft: 9800,
+                featured: true,
+                image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1000&q=80",
+                gallery: [
+                    "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1000&q=80"
+                ],
+                agent: {
+                    name: "Elena Rostova",
+                    role: "Senior Partner",
+                    phone: "+1 310 555 0199",
+                    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80"
+                },
+                description: "Direct deep-water dockage for up to 120ft yacht. Gated privacy perimeter with lush botanical landscaping and private beach entrance.",
+                amenities: ["Deepwater Dockage", "Private Beach", "Tennis Court", "Gated Security", "Guest House"]
+            },
+            {
+                id: 4,
+                title: "The Prism Commercial Tower",
+                type: "Commercial",
+                price: 28000000,
+                location: "Downtown, Chicago",
+                beds: 0,
+                baths: 12,
+                sqft: 24000,
+                featured: false,
+                image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80",
+                gallery: [
+                    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80"
+                ],
+                agent: {
+                    name: "Marcus Sterling",
+                    role: "Commercial Director",
+                    phone: "+1 212 555 0144",
+                    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=120&q=80"
+                },
+                description: "LEED Platinum certified commercial headquarters. Solar integrated glass façade and open plan corporate floors.",
+                amenities: ["LEED Certified", "EV Charging", "Conference Center", "Roof Garden"]
+            },
+            {
+                id: 5,
+                title: "Alpine Ridge Sanctuary",
+                type: "Villa",
+                price: 6400000,
+                location: "Aspen, Colorado",
+                beds: 4,
+                baths: 5,
+                sqft: 5200,
+                featured: false,
+                image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80",
+                gallery: [
+                    "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80"
+                ],
+                agent: {
+                    name: "Chloe Vance",
+                    role: "Luxury Consultant",
+                    phone: "+1 303 555 0188",
+                    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&q=80"
+                },
+                description: "Ski-in / ski-out mountain modern estate. Heated driveways, stone fireplaces, and outdoor hot tub overlooking pristine alpine pine forests.",
+                amenities: ["Ski-In/Ski-Out", "Heated Driveway", "Outdoor Hot Tub", "Fireplace Lounge"]
+            },
+            {
+                id: 6,
+                title: "Monaco Bay Modernist Villa",
+                type: "Estate",
+                price: 18900000,
+                location: "French Riviera",
+                beds: 6,
+                baths: 7,
+                sqft: 8500,
+                featured: false,
+                image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
+                gallery: [
+                    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80"
+                ],
+                agent: {
+                    name: "Elena Rostova",
+                    role: "Senior Partner",
+                    phone: "+1 310 555 0199",
+                    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80"
+                },
+                description: "Overlooking the Mediterranean. Minimalist glasspunk architectural curves, infinity sea edge pool, and helipad.",
+                amenities: ["Mediterranean View", "Helipad", "Infinity Pool", "Wine Cellar"]
+            }
+        ];
+
+        /* Agents Database */
+        const agentsData = [
+            {
+                name: "Vishu Bag",
+                role: "Senior Managing Partner",
+                sales: "$640M+ Closed",
+                phone: "+1 310 555 0199",
+                email: "vishu@elitespace.com",
+                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                name: "Ishan Bagale",
+                role: "Director of Commercial Assets",
+                sales: "$820M+ Closed",
+                phone: "+91 8769002345",
+                email: "ishan@elitespace.com",
+                image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                name: "Himanshu Wagh",
+                role: "Bespoke Residential Specialist",
+                sales: "$310M+ Closed",
+                phone: "+1 303 555 0188",
+                email: "chloe@elitespace.com",
+                image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80"
+            }
+        ];
+
+        /* Testimonials Database */
+        const testimonialsData = [
+            {
+                quote: "EliteSpace Realty represented us during the acquisition of our Malibu estate. Exceptional confidentiality, speed, and market intelligence throughout.",
+                author: "Victoria Sterling",
+                role: "Founder, Sterling Capital",
+                avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80",
+                rating: 5
+            },
+            {
+                quote: "Finding off-market commercial properties in Manhattan is nearly impossible. Marcus and his team delivered three prime options within 48 hours.",
+                author: "David Chen",
+                role: "Managing Director, Apex Fund",
+                avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80",
+                rating: 5
+            }
+        ];
+
+        let currentTestimonialIndex = 0;
+        let savedPropertyIds = JSON.parse(localStorage.getItem('elitespace_saved') || '[]');
+
+        /* App Initialization */
+        window.addEventListener('DOMContentLoaded', () => {
+            // Hide preloader
+            setTimeout(() => {
+                const preloader = document.getElementById('preloader');
+                preloader.classList.add('opacity-0');
+                setTimeout(() => preloader.style.display = 'none', 700);
+            }, 600);
+
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            // Setup Event Listeners & Canvas
+            initTheme();
+            initSidebar();
+            initNavigation();
+            initHeroCanvas();
+            renderFeaturedProperties();
+            renderAllProperties();
+            renderAgents();
+            updateSavedBadges();
+            initMortgageCalc();
+            renderTestimonial();
+            setupCounters();
+            setupScrollEffects();
+        });
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('elitespace_theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            updateThemeUI();
+
+            document.getElementById('theme-toggle').addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                const isDark = document.documentElement.classList.contains('dark');
+                localStorage.setItem('elitespace_theme', isDark ? 'dark' : 'light');
+                updateThemeUI();
+            });
+        }
+
+        function updateThemeUI() {
+            const isDark = document.documentElement.classList.contains('dark');
+            const dot = document.getElementById('theme-dot');
+            const label = document.getElementById('theme-text-label');
+            if (isDark) {
+                dot.style.transform = 'translateX(16px)';
+                label.textContent = 'Light Mode';
+            } else {
+                dot.style.transform = 'translateX(0px)';
+                label.textContent = 'Dark Mode';
+            }
+        }
+
+        function initSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            document.getElementById('open-sidebar-btn').addEventListener('click', () => {
+                sidebar.classList.remove('-translate-x-full');
+            });
+            document.getElementById('close-sidebar-btn').addEventListener('click', () => {
+                sidebar.classList.add('-translate-x-full');
+            });
+        }
+
+        function initNavigation() {
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = link.getAttribute('data-target');
+                    navigateToSection(target);
+                    // Mobile sidebar auto-close
+                    document.getElementById('sidebar').classList.add('-translate-x-full');
+                });
+            });
+        }
+
+        function navigateToSection(targetId) {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(sec => sec.classList.remove('active'));
+
+            const targetSec = document.getElementById(targetId);
+            if (targetSec) {
+                targetSec.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Update nav link styles
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(link => {
+                if (link.getAttribute('data-target') === targetId) {
+                    link.className = "nav-link active flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-200 bg-softpurple text-white shadow-md shadow-softpurple/30";
+                } else {
+                    link.className = "nav-link flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-sm text-slate-600 dark:text-slate-300 hover:bg-lavender-100/50 dark:hover:bg-slate-800/50 transition-all duration-200";
+                }
+            });
+
+            if (targetId === 'account') {
+                renderSavedProperties();
+            }
+        }
+
+        function initHeroCanvas() {
+            const canvas = document.getElementById('hero-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            function resize() {
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            let particles = Array.from({ length: 30 }, () => ({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 3 + 1,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                alpha: Math.random() * 0.5 + 0.2
+            }));
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(155, 142, 196, ${p.alpha})`;
+                    ctx.fill();
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        function createPropertyCardHtml(prop) {
+            const isSaved = savedPropertyIds.includes(prop.id);
+            return `
+                <div class="glass-card rounded-3xl overflow-hidden flex flex-col group border border-white/40 dark:border-slate-800">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="${prop.image}" alt="${prop.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-softpurple/80 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full tracking-wider">
+                            ${prop.type}
+                        </div>
+                        <button onclick="toggleSaveProperty(${prop.id})" class="absolute top-3 right-3 p-2.5 rounded-full glass-panel text-white hover:scale-110 transition-transform">
+                            <i data-lucide="heart" class="w-4 h-4 ${isSaved ? 'fill-rose-500 text-rose-500' : 'text-white'}"></i>
+                        </button>
+                        <div class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md text-white font-extrabold text-sm px-3 py-1 rounded-xl">
+                            $${prop.price.toLocaleString()}
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center gap-1 text-slate-400 text-xs mb-1">
+                                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-softpurple"></i>
+                                <span>${prop.location}</span>
+                            </div>
+                            <h3 class="font-bold text-base text-slate-800 dark:text-white leading-snug">${prop.title}</h3>
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-slate-600 dark:text-slate-300 border-y border-slate-200/50 dark:border-slate-800 py-2.5">
+                            <span class="flex items-center gap-1"><i data-lucide="bed" class="w-3.5 h-3.5"></i> ${prop.beds} Beds</span>
+                            <span class="flex items-center gap-1"><i data-lucide="bath" class="w-3.5 h-3.5"></i> ${prop.baths} Baths</span>
+                            <span class="flex items-center gap-1"><i data-lucide="maximize" class="w-3.5 h-3.5"></i> ${prop.sqft} sqft</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-1">
+                            <div class="flex items-center gap-2">
+                                <img src="${prop.agent.image}" class="w-7 h-7 rounded-full object-cover">
+                                <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">${prop.agent.name}</span>
+                            </div>
+                            <button onclick="openPropertyModal(${prop.id})" class="text-xs font-bold text-softpurple hover:underline flex items-center gap-1">
+                                Quick View
+                                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderFeaturedProperties() {
+            const container = document.getElementById('featured-properties-container');
+            const featured = propertiesData.filter(p => p.featured);
+            container.innerHTML = featured.map(p => createPropertyCardHtml(p)).join('');
+            lucide.createIcons();
+        }
+
+        function renderAllProperties() {
+            const container = document.getElementById('full-properties-grid');
+            if (!container) return;
+
+            const keyword = document.getElementById('filter-keyword').value.toLowerCase();
+            const type = document.getElementById('filter-type').value;
+            const maxPrice = document.getElementById('filter-price').value;
+            const minBeds = document.getElementById('filter-beds').value;
+
+            let filtered = propertiesData.filter(p => {
+                if (keyword && !p.title.toLowerCase().includes(keyword) && !p.location.toLowerCase().includes(keyword)) return false;
+                if (type !== 'all' && p.type !== type) return false;
+                if (maxPrice !== 'all' && p.price > parseInt(maxPrice)) return false;
+                if (minBeds !== 'all' && p.beds < parseInt(minBeds)) return false;
+                return true;
+            });
+
+            container.innerHTML = filtered.map(p => createPropertyCardHtml(p)).join('');
+            document.getElementById('results-count').textContent = `Showing ${filtered.length} Properties`;
+            lucide.createIcons();
+        }
+
+        // Active Filtering listeners
+        ['filter-keyword', 'filter-type', 'filter-price', 'filter-beds'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.addEventListener('input', renderAllProperties);
+                el.addEventListener('change', renderAllProperties);
+            }
+        });
+
+        function resetFilters() {
+            document.getElementById('filter-keyword').value = '';
+            document.getElementById('filter-type').value = 'all';
+            document.getElementById('filter-price').value = 'all';
+            document.getElementById('filter-beds').value = 'all';
+            renderAllProperties();
+        }
+
+        function handleHeroSearch() {
+            const loc = document.getElementById('hero-location-input').value;
+            const type = document.getElementById('hero-type-input').value;
+
+            if (loc) document.getElementById('filter-keyword').value = loc;
+            if (type) document.getElementById('filter-type').value = type;
+
+            navigateToSection('properties');
+            renderAllProperties();
+        }
+
+        function toggleSaveProperty(id) {
+            if (savedPropertyIds.includes(id)) {
+                savedPropertyIds = savedPropertyIds.filter(item => item !== id);
+                showToast('Removed from saved properties');
+            } else {
+                savedPropertyIds.push(id);
+                showToast('Property saved to your favorites!');
+            }
+            localStorage.setItem('elitespace_saved', JSON.stringify(savedPropertyIds));
+            updateSavedBadges();
+            renderFeaturedProperties();
+            renderAllProperties();
+            renderSavedProperties();
+        }
+
+        function updateSavedBadges() {
+            const count = savedPropertyIds.length;
+            document.getElementById('saved-counter-badge').textContent = count;
+            document.getElementById('mobile-saved-badge').textContent = count;
+            document.getElementById('saved-tab-count').textContent = count;
+        }
+
+        function renderSavedProperties() {
+            const container = document.getElementById('saved-properties-grid');
+            const emptyState = document.getElementById('saved-empty-state');
+            const savedList = propertiesData.filter(p => savedPropertyIds.includes(p.id));
+
+            if (savedList.length === 0) {
+                container.innerHTML = '';
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+                container.innerHTML = savedList.map(p => createPropertyCardHtml(p)).join('');
+                lucide.createIcons();
+            }
+        }
+
+        function openPropertyModal(id) {
+            const prop = propertiesData.find(p => p.id === id);
+            if (!prop) return;
+
+            const modal = document.getElementById('property-modal');
+            const content = document.getElementById('modal-content');
+
+            content.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-3">
+                        <img id="modal-main-img" src="${prop.image}" class="w-full h-72 object-cover rounded-2xl shadow-lg">
+                        <div class="flex gap-2 overflow-x-auto pb-2">
+                            ${prop.gallery.map(img => `
+                                <img src="${img}" onclick="document.getElementById('modal-main-img').src='${img}'" class="w-20 h-16 object-cover rounded-xl cursor-pointer hover:opacity-80 transition-opacity">
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="inline-block px-3 py-1 bg-softpurple/20 text-softpurple text-xs font-bold rounded-full">${prop.type}</div>
+                        <h2 class="text-2xl font-black text-slate-900 dark:text-white">${prop.title}</h2>
+                        <p class="text-xs text-slate-500">${prop.location}</p>
+                        <p class="text-2xl font-extrabold text-softpurple">$${prop.price.toLocaleString()}</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${prop.description}</p>
+                        
+                        <div class="grid grid-cols-3 gap-2 text-center text-xs p-3 glass-card rounded-xl">
+                            <div><span class="block font-bold text-slate-800 dark:text-white">${prop.beds}</span> Beds</div>
+                            <div><span class="block font-bold text-slate-800 dark:text-white">${prop.baths}</span> Baths</div>
+                            <div><span class="block font-bold text-slate-800 dark:text-white">${prop.sqft}</span> Sqft</div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xs font-bold uppercase text-slate-400 mb-2">Amenities</h4>
+                            <div class="flex flex-wrap gap-2">
+                                ${prop.amenities.map(a => `<span class="text-[11px] px-2.5 py-1 glass-card rounded-lg font-semibold">${a}</span>`).join('')}
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <button onclick="navigateToSection('consult'); closePropertyModal();" class="w-full py-3 bg-softpurple text-white font-bold text-xs rounded-xl hover:bg-softpurple-dark transition-colors">
+                                Book Private Viewing
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closePropertyModal() {
+            document.getElementById('property-modal').classList.add('hidden');
+        }
+
+        function initMortgageCalc() {
+            const priceSlider = document.getElementById('calc-price');
+            const downInput = document.getElementById('calc-down');
+            const rateInput = document.getElementById('calc-rate');
+            const tenureSelect = document.getElementById('calc-tenure');
+
+            function calculate() {
+                const price = parseFloat(priceSlider.value);
+                const downPercent = parseFloat(downInput.value) / 100;
+                const annualRate = parseFloat(rateInput.value) / 100;
+                const years = parseInt(tenureSelect.value);
+
+                document.getElementById('calc-price-val').textContent = `$${price.toLocaleString()}`;
+
+                const principal = price * (1 - downPercent);
+                const monthlyRate = annualRate / 12;
+                const totalPayments = years * 12;
+
+                const monthlyPayment = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) / (Math.pow(1 + monthlyRate, totalPayments) - 1);
+
+                document.getElementById('calc-result').textContent = `$${Math.round(monthlyPayment).toLocaleString()} / mo`;
+            }
+
+            [priceSlider, downInput, rateInput, tenureSelect].forEach(el => el.addEventListener('input', calculate));
+        }
+
+        function renderAgents() {
+            const container = document.getElementById('agents-grid');
+            container.innerHTML = agentsData.map(a => `
+                <div class="glass-card p-6 rounded-3xl flex flex-col items-center text-center space-y-4">
+                    <img src="${a.image}" class="w-24 h-24 rounded-full object-cover border-4 border-softpurple/30">
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-800 dark:text-white">${a.name}</h3>
+                        <p class="text-xs font-semibold text-softpurple">${a.role}</p>
+                        <p class="text-[11px] text-slate-400 mt-1">${a.sales}</p>
+                    </div>
+                    <div class="flex gap-2 pt-2">
+                        <a href="tel:${a.phone}" class="p-2 rounded-xl glass-panel text-slate-700 dark:text-white hover:bg-softpurple hover:text-white transition-colors">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                        </a>
+                        <a href="mailto:${a.email}" class="p-2 rounded-xl glass-panel text-slate-700 dark:text-white hover:bg-softpurple hover:text-white transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function renderTestimonial() {
+            const t = testimonialsData[currentTestimonialIndex];
+            document.getElementById('testimonial-text').textContent = `"${t.quote}"`;
+            document.getElementById('testimonial-author').textContent = t.author;
+            document.getElementById('testimonial-role').textContent = t.role;
+            document.getElementById('testimonial-avatar').src = t.avatar;
+
+            const stars = Array.from({ length: t.rating }, () => `<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>`).join('');
+            document.getElementById('testimonial-stars').innerHTML = stars;
+            lucide.createIcons();
+        }
+
+        function nextTestimonial() {
+            currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialsData.length;
+            renderTestimonial();
+        }
+
+        function prevTestimonial() {
+            currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonialsData.length) % testimonialsData.length;
+            renderTestimonial();
+        }
+
+        /* FAQ Accordion Toggle */
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            content.classList.toggle('hidden');
+            icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+
+        /* Account Tab Switcher */
+        function switchAccountTab(tab) {
+            const savedContent = document.getElementById('account-saved-content');
+            const loginContent = document.getElementById('account-login-content');
+            const savedBtn = document.getElementById('tab-saved-btn');
+            const loginBtn = document.getElementById('tab-login-btn');
+
+            if (tab === 'saved') {
+                savedContent.classList.remove('hidden');
+                loginContent.classList.add('hidden');
+                savedBtn.className = "pb-3 text-sm font-bold border-b-2 border-softpurple text-softpurple";
+                loginBtn.className = "pb-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-white";
+            } else {
+                savedContent.classList.add('hidden');
+                loginContent.classList.remove('hidden');
+                loginBtn.className = "pb-3 text-sm font-bold border-b-2 border-softpurple text-softpurple";
+                savedBtn.className = "pb-3 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-white";
+            }
+        }
+
+        /* Animated Statistics Counter Trigger */
+        function setupCounters() {
+            const counters = document.querySelectorAll('[data-counter]');
+            counters.forEach(counter => {
+                const target = parseFloat(counter.getAttribute('data-counter'));
+                let current = 0;
+                const increment = target / 50;
+                const update = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = target % 1 === 0 ? Math.ceil(current) : current.toFixed(1);
+                        setTimeout(update, 30);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                update();
+            });
+        }
+
+        /* Scroll Effects & Back-to-top Button */
+        function setupScrollEffects() {
+            const btn = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    btn.classList.remove('opacity-0', 'pointer-events-none');
+                } else {
+                    btn.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /* Form Submissions & Toast Alerts */
+        function handleConsultationSubmit(e) {
+            e.preventDefault();
+            showToast('Consultation request submitted! Our advisory desk will contact you.');
+            e.target.reset();
+        }
+
+        function handleLoginSubmit(e) {
+            e.preventDefault();
+            showToast('Signed in successfully as VIP Member.');
+            e.target.reset();
+        }
+
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'glass-panel px-5 py-3 rounded-2xl text-xs font-bold text-slate-800 dark:text-white shadow-2xl border border-softpurple/40 flex items-center gap-2 mb-2 animate-fade-in';
+            toast.innerHTML = `<i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i> ${message}`;
+            container.appendChild(toast);
+            lucide.createIcons();
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+                setTimeout(() => toast.remove(), 400);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
